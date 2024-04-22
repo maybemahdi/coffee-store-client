@@ -2,7 +2,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const Details = () => {
   const coffee = useLoaderData();
-  const { id } = useParams();
+//   const { id } = useParams();
   const { name, chef, supplier, taste, category, details, photo } = coffee;
   return (
     <div className="flex my-12 mx-auto w-[85%] gap-10 md:flex-row flex-col items-center justify-center">
