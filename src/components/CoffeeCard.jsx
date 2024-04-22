@@ -38,17 +38,17 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
   };
   return (
     <div className="shadow-xl bg-white rounded-lg p-5">
-      <div className="flex md:flex-row flex-col items-center justify-between">
+      <div className="flex md:flex-row flex-col gap-5 items-center justify-between">
         <div className="basis-1/2">
           <img className="w-[185px] h-[200px] rounded-lg" src={photo} alt="" />
         </div>
-        <div className="basis-1/2 flex justify-between items-center">
+        <div className="basis-1/2 text-xl flex gap-5 flex-col md:flex-row justify-between items-center">
           <div>
             <p>Name: {name}</p>
             <p>Chef: {chef}</p>
             <p>Taste: {taste}</p>
           </div>
-          <div className="join join-vertical gap-3">
+          <div className="join md:join-vertical gap-3">
             <Link to={`/coffee-details/${_id}`}>
               <button className="bg-[#d79c3c] hover:bg-[#b88531] transition-all duration-500 px-3 py-2 join-item">
                 Details
