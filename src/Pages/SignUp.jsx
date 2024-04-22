@@ -16,7 +16,7 @@ const SignUp = () => {
     createUser(email, password)
       .then((result) => {
         console.log(result.user);
-        fetch("http://localhost:5000/users", {
+        fetch("https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

@@ -14,7 +14,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         const user = { email, lastLoggedAt: result.user?.metadata?.lastSignInTime };
-        fetch("http://localhost:5000/users", {
+        fetch("https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/users", {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",

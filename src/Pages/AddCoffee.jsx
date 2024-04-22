@@ -13,7 +13,7 @@ const AddCoffee = () => {
     const photo = form.photo.value;
     const newCoffee = { name, chef, supplier, taste, category, details, photo };
     console.log(newCoffee);
-    fetch("http://localhost:5000/coffees", {
+    fetch("https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

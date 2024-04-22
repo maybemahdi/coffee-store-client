@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
-  const { _id, name, chef, supplier, taste, category, details, photo } = coffee;
+  const { _id, name, chef, taste, photo } = coffee;
   const handleDelete = (id) => {
     console.log(id);
     Swal.fire({
@@ -15,9 +15,12 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/coffees/${id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -55,7 +58,9 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
               </button>
             </Link>
             <Link to={`/updatecoffee/${_id}`}>
-              <button className="bg-[#3c96d7] hover:bg-[#2e7bb1] transition-all duration-500 px-3 py-2 join-item">Update</button>
+              <button className="bg-[#3c96d7] hover:bg-[#2e7bb1] transition-all duration-500 px-3 py-2 join-item">
+                Update
+              </button>
             </Link>
             <button
               onClick={() => handleDelete(_id)}

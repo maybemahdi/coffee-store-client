@@ -16,7 +16,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/coffees"),
+        loader: () =>
+          fetch(
+            "https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees"
+          ),
       },
       {
         path: "/addcoffee",
@@ -26,26 +29,33 @@ export const router = createBrowserRouter([
         path: "/updatecoffee/:id",
         element: <UpdateCoffee />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees/${params.id}`),
+          fetch(
+            `https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees/${params.id}`
+          ),
       },
       {
         path: "/coffee-details/:id",
         element: <Details />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/coffees/${params.id}`),
+          fetch(
+            `https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees/${params.id}`
+          ),
       },
       {
-        path: '/register',
-        element: <SignUp/>,
+        path: "/register",
+        element: <SignUp />,
       },
       {
-        path: '/login',
-        element: <Login/>,
+        path: "/login",
+        element: <Login />,
       },
       {
-        path: '/users',
-        element: <Users/>,
-        loader: () => fetch('http://localhost:5000/users'),
+        path: "/users",
+        element: <Users />,
+        loader: () =>
+          fetch(
+            "https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/users"
+          ),
       },
     ],
   },
