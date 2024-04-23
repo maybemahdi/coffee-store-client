@@ -1,11 +1,14 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import Nav from "../components/Nav";
 
 const Details = () => {
   const coffee = useLoaderData();
-//   const { id } = useParams();
+  //   const { id } = useParams();
   const { name, chef, supplier, taste, category, details, photo } = coffee;
   return (
-    <div className="flex my-12 mx-auto w-[85%] gap-10 md:flex-row flex-col items-center justify-center">
+    <div>
+      <Nav/>
+      <div className="flex my-12 mx-auto w-[85%] gap-10 md:flex-row flex-col items-center justify-center">
       <div className="basis-1/2 w-full h-[590px]">
         <img className="h-full w-full rounded-lg" src={photo} alt="" />
       </div>
@@ -17,6 +20,7 @@ const Details = () => {
         <p>Chef: {category}</p>
         <p>Taste: {details}</p>
       </div>
+    </div>
     </div>
   );
 };

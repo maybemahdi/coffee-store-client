@@ -6,7 +6,9 @@ const Layout = () => {
     return (
         <div>
             <Nav/>
+            hello
             <Outlet/>
+            world
         </div>
     );
 };

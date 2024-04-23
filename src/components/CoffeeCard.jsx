@@ -16,7 +16,7 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
-          `https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees/${id}`,
+          `https://coffee-store-server-sigma-teal.vercel.app/coffees/${id}`,
           {
             method: "DELETE",
           }

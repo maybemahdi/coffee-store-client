@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from "sweetalert2";
+import Nav from "../components/Nav";
 
 const Users = () => {
   const loadedUsers = useLoaderData();
@@ -16,7 +17,7 @@ const Users = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/users/${id}`, {
+        fetch(`https://coffee-store-server-sigma-teal.vercel.app/users/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -36,39 +37,42 @@ const Users = () => {
     });
   };
   return (
-    <div className="overflow-x-auto mx-auto w-[85%] my-10">
-      <table className="table">
-        {/* head */}
-        <thead>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Last Logged in</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {/* Dynamic rows */}
-          {users.map((user, idx) => (
-            <tr key={user._id}>
-              <th>{idx + 1}</th>
-              <td>{user.name}</td>
-              <td>{user.email}</td>
-              <td>{user.lastLoggedAt}</td>
-              <td>
-                <button
-                  onClick={() => handleDelete(user._id)}
-                  title="Delete User"
-                  className="btn"
-                >
-                  X
-                </button>
-              </td>
+    <div>
+      <Nav />
+      <div className="overflow-x-auto mx-auto w-[85%] my-10">
+        <table className="table">
+          {/* head */}
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Last Logged in</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {/* Dynamic rows */}
+            {users.map((user, idx) => (
+              <tr key={user._id}>
+                <th>{idx + 1}</th>
+                <td>{user.name}</td>
+                <td>{user.email}</td>
+                <td>{user.lastLoggedAt}</td>
+                <td>
+                  <button
+                    onClick={() => handleDelete(user._id)}
+                    title="Delete User"
+                    className="btn"
+                  >
+                    X
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

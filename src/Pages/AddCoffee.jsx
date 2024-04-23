@@ -1,4 +1,5 @@
 import Swal from "sweetalert2";
+import Nav from "../components/Nav";
 
 const AddCoffee = () => {
   const handleAddCoffee = (e) => {
@@ -13,7 +14,7 @@ const AddCoffee = () => {
     const photo = form.photo.value;
     const newCoffee = { name, chef, supplier, taste, category, details, photo };
     console.log(newCoffee);
-    fetch("https://espresso-emporium-server-fwdh07t6g-mahdi-hasan-official.vercel.app/coffees", {
+    fetch("https://coffee-store-server-sigma-teal.vercel.app/coffees", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -33,8 +34,9 @@ const AddCoffee = () => {
       });
   };
   return (
-    <div className="flex font-rancho flex-col h-screen">
-      <div className="mt-10 flex-grow mb-10">
+    <div className="flex flex-col h-screen">
+      <Nav/>
+      <div className="mt-10 font-rancho flex-grow mb-10">
         <div
           className="rounded-lg border bg-card text-card-foreground shadow-sm max-w-2xl mx-auto"
           data-v0-t="card"
